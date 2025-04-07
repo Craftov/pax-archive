@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAX ARCHIVE</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #33ffcc;
+      font-family: monospace;
+      margin: 0;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #33ffcc;
+    }
+    .terminal-box {
+      background-color: #111;
+      border: 1px solid #33ffcc;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .glitch {
+      color: #ff3333;
+      font-style: italic;
+    }
+    a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .log-entry {
+      margin-bottom: 10px;
+    }
+    .secret {
+      display: none;
+      color: #ff3366;
+    }
+  </style>
+</head>
+<body>
+  <h1>PAX ARCHIVE SYSTEM</h1>
+  <p>ACCESS LEVEL: RESTRICTED</p>
+  <div class="terminal-box">
+    <h2>Project Access Log</h2>
+    <div class="log-entry">[ERROR 045] AVATAR_2.0 :: Fragmented Presence Detected</div>
+    <div class="log-entry">[INFO 017] USER_05 :: Uplink Active</div>
+    <div class="log-entry">[WARNING 302] SINGULARITY FIELD NEAR THRESHOLD</div>
+    <div class="log-entry">[404] SUBJECT_08 :: NOT FOUND</div>
+    <div class="log-entry">[STATUS] LEGION_CORE :: <span class="glitch">ACTIVE</span></div>
+    <div class="log-entry">[ACCESS] Initiate Simulation Recovery → <a href="#">LOGIN</a></div>
+  </div>
+
+  <div class="terminal-box">
+    <h2>Data Fragments</h2>
+    <ul>
+      <li><a href="#">[F_001] user_05.LOG</a></li>
+      <li><a href="#">[F_002] FIXER_MEMORY_12</a></li>
+      <li><a href="#">[F_003] LEGION_CORE_PING</a></li>
+      <li><a href="#">[F_004] SINGULARITY_OVERLAY</a></li>
+      <li><a href="#">[F_005] SUBJECT_08_DEATH_FEED</a></li>
+    </ul>
+  </div>
+
+  <div class="terminal-box">
+    <h2>Decrypt Terminal</h2>
+    <p>ENTER PASSCODE:</p>
+    <input type="text" id="passcode" placeholder="********" />
+    <button onclick="checkCode()">SUBMIT</button>
+    <p id="secret-msg" class="secret">ACCESS GRANTED :: REVELATION_UPLINK: INITIATED</p>
+  </div>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById('passcode').value;
+      const secret = document.getElementById('secret-msg');
+      if (input === 'SERVERZ') {
+        secret.style.display = 'block';
+      } else {
+        alert('ACCESS DENIED');
+      }
+    }
+  </script>
+</body>
+</html>
