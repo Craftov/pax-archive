@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PAX ARCHIVE</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
     body {
       background-color: #000000;
       color: #00ff88;
@@ -15,13 +14,11 @@
       padding: 20px;
       line-height: 1.5;
     }
-
     h1, h2, h3 {
       color: #00ff88;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-
     .terminal {
       background-color: #080808;
       border: 2px solid #00ff88;
@@ -29,31 +26,25 @@
       margin-bottom: 30px;
       box-shadow: 0 0 15px #00ff88aa;
     }
-
     .log-line {
       margin-bottom: 10px;
       white-space: pre-wrap;
     }
-
     a {
       color: #00ffaa;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
     .glow {
       color: #ff0088;
       animation: blink 1.2s infinite;
     }
-
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.2; }
     }
-
     input, button {
       font-family: 'Share Tech Mono', monospace;
       background: black;
@@ -62,7 +53,6 @@
       padding: 5px;
       margin-top: 10px;
     }
-
     .hidden {
       display: none;
       color: #ff0066;
@@ -79,17 +69,17 @@
     <div class="log-line">[USER_05] :: Residual echo found</div>
     <div class="log-line">[ERROR] :: Witness memory fragment corrupted</div>
     <div class="log-line">[MERGE_PROTOCOL] :: Instability increasing</div>
-    <div class="log-line">[INPUT REQUIRED] → <a href="#">ACCESS SEGMENT F_001</a></div>
+    <div class="log-line">[INPUT REQUIRED] → <a href="f_001.html">ACCESS SEGMENT F_001</a></div>
   </div>
 
   <div class="terminal">
     <h2>:: FILE DIRECTORY</h2>
     <ul>
-      <li><a href="f_001.html">[F_001] user_05.LOG</a></li>
-      <li><a href="#">[F_002] :: fixer_feed_death</a></li>
-      <li><a href="#">[F_003] :: legion_ping</a></li>
-      <li><a href="#">[F_004] :: darksignal_404</a></li>
-      <li><a href="#">[F_005] :: sgn_merge_proto</a></li>
+      <li><a href="f_001.html">[F_001] :: user_05.LOG</a></li>
+      <li><a href="f_002.html">[F_002] :: fixer_feed_death</a></li>
+      <li><a href="f_003.html">[F_003] :: legion_ping</a></li>
+      <li><a href="f_004.html">[F_004] :: darksignal_404</a></li>
+      <li><a href="f_005.html">[F_005] :: sgn_merge_proto</a></li>
     </ul>
   </div>
 
@@ -106,7 +96,7 @@
       const input = document.getElementById('codeInput').value;
       const message = document.getElementById('unlockMsg');
       if (input === 'VOIDLINK') {
-        message.style.display = 'block';
+        window.location.href = 'access.html';
       } else {
         alert('ACCESS DENIED');
       }
