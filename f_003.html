@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>F_003 - legion_ping</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+    body {
+      background-color: #000;
+      color: #00ff88;
+      font-family: 'Share Tech Mono', monospace;
+      margin: 0;
+      padding: 20px;
+    }
+    pre {
+      background: #080808;
+      border-left: 4px solid #00ff88;
+      padding: 20px;
+    }
+    .loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: black;
+      color: #00ff88;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      font-family: 'Share Tech Mono', monospace;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div class="loader" id="loader">LOADING ARCHIVE...</div>
+  <div style="display:none;" id="content">
+    <h2>> ACCESSING: F_003 - legion_ping</h2>
+    <pre>[PING ATTEMPT]
+Protocol: LEGION_CORE :: SIGNAL
+
+Response: MULTI-ECHO DETECTED
+
+Fragments detected: AVATAR_2.0 / CORE_MODULE / SUBJECT_09
+>> SINGULAR ENTITY NO LONGER DETECTABLE <<</pre>
+    <br><a href="index.html">← BACK TO ARCHIVE</a>
+  </div>
+  <script>
+    window.onload = function() {
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+      }, 1600);
+    };
+  </script>
+</body>
+</html>
