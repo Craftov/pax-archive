@@ -1,84 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PAX ARCHIVE</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
     body {
-      background-color: #0a0a0a;
-      color: #33ffcc;
-      font-family: monospace;
-      margin: 0;
+      background-color: #000000;
+      color: #00ff88;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 16px;
       padding: 20px;
+      line-height: 1.5;
     }
-    h1, h2 {
-      color: #33ffcc;
+
+    h1, h2, h3 {
+      color: #00ff88;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
-    .terminal-box {
-      background-color: #111;
-      border: 1px solid #33ffcc;
+
+    .terminal {
+      background-color: #080808;
+      border: 2px solid #00ff88;
       padding: 20px;
-      margin-top: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 15px #00ff88aa;
     }
-    .glitch {
-      color: #ff3333;
-      font-style: italic;
+
+    .log-line {
+      margin-bottom: 10px;
+      white-space: pre-wrap;
     }
+
     a {
-      color: #ffcc00;
+      color: #00ffaa;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
-    .log-entry {
-      margin-bottom: 10px;
+
+    .glow {
+      color: #ff0088;
+      animation: blink 1.2s infinite;
     }
-    .secret {
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    input, button {
+      font-family: 'Share Tech Mono', monospace;
+      background: black;
+      border: 1px solid #00ff88;
+      color: #00ff88;
+      padding: 5px;
+      margin-top: 10px;
+    }
+
+    .hidden {
       display: none;
-      color: #ff3366;
+      color: #ff0066;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>PAX ARCHIVE SYSTEM</h1>
-  <p>ACCESS LEVEL: RESTRICTED</p>
-  <div class="terminal-box">
-    <h2>Project Access Log</h2>
-    <div class="log-entry">[ERROR 045] AVATAR_2.0 :: Fragmented Presence Detected</div>
-    <div class="log-entry">[INFO 017] USER_05 :: Uplink Active</div>
-    <div class="log-entry">[WARNING 302] SINGULARITY FIELD NEAR THRESHOLD</div>
-    <div class="log-entry">[404] SUBJECT_08 :: NOT FOUND</div>
-    <div class="log-entry">[STATUS] LEGION_CORE :: <span class="glitch">ACTIVE</span></div>
-    <div class="log-entry">[ACCESS] Initiate Simulation Recovery → <a href="#">LOGIN</a></div>
+  <h1>> INITIATE: ARCHIVE INTERFACE</h1>
+
+  <div class="terminal">
+    <h2>:: SYSTEM LOGS</h2>
+    <div class="log-line">[AVATAR_2.0] :: Status → <span class="glow">ACTIVE</span></div>
+    <div class="log-line">[USER_05] :: Residual echo found</div>
+    <div class="log-line">[ERROR] :: Witness memory fragment corrupted</div>
+    <div class="log-line">[MERGE_PROTOCOL] :: Instability increasing</div>
+    <div class="log-line">[INPUT REQUIRED] → <a href="#">ACCESS SEGMENT F_001</a></div>
   </div>
 
-  <div class="terminal-box">
-    <h2>Data Fragments</h2>
+  <div class="terminal">
+    <h2>:: FILE DIRECTORY</h2>
     <ul>
-      <li><a href="#">[F_001] user_05.LOG</a></li>
-      <li><a href="#">[F_002] FIXER_MEMORY_12</a></li>
-      <li><a href="#">[F_003] LEGION_CORE_PING</a></li>
-      <li><a href="#">[F_004] SINGULARITY_OVERLAY</a></li>
-      <li><a href="#">[F_005] SUBJECT_08_DEATH_FEED</a></li>
+      <li><a href="#">[F_001] :: user_05.LOG</a></li>
+      <li><a href="#">[F_002] :: fixer_feed_death</a></li>
+      <li><a href="#">[F_003] :: legion_ping</a></li>
+      <li><a href="#">[F_004] :: darksignal_404</a></li>
+      <li><a href="#">[F_005] :: sgn_merge_proto</a></li>
     </ul>
   </div>
 
-  <div class="terminal-box">
-    <h2>Decrypt Terminal</h2>
-    <p>ENTER PASSCODE:</p>
-    <input type="text" id="passcode" placeholder="********" />
-    <button onclick="checkCode()">SUBMIT</button>
-    <p id="secret-msg" class="secret">ACCESS GRANTED :: REVELATION_UPLINK: INITIATED</p>
+  <div class="terminal">
+    <h2>:: PASSCODE DECRYPTION</h2>
+    <p>ENTER CODE TO UNLOCK ARCHIVE:</p>
+    <input id="codeInput" placeholder="********">
+    <button onclick="validateCode()">SUBMIT</button>
+    <div class="hidden" id="unlockMsg">ACCESS GRANTED :: WELCOME BACK, AGENT</div>
   </div>
 
   <script>
-    function checkCode() {
-      const input = document.getElementById('passcode').value;
-      const secret = document.getElementById('secret-msg');
-      if (input === 'SERVERZ') {
-        secret.style.display = 'block';
+    function validateCode() {
+      const input = document.getElementById('codeInput').value;
+      const message = document.getElementById('unlockMsg');
+      if (input === 'VOIDLINK') {
+        message.style.display = 'block';
       } else {
         alert('ACCESS DENIED');
       }
